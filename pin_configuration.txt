@@ -1,0 +1,19 @@
+ESP32 PIN CONFIGURATION
+=======================
+
+DHT22 DATA      -> GPIO 4
+MQ-135 AO       -> GPIO 34 (ADC)
+LDR divider     -> GPIO 35 (ADC)
+OLED SDA        -> GPIO 21
+OLED SCL        -> GPIO 22
+
+DHT22 VCC       -> 3.3V
+DHT22 GND       -> GND
+OLED VCC        -> 3.3V
+OLED GND        -> GND
+
+IMPORTANT:
+ESP32 ADC inputs must not receive more than 3.3 V.
+MQ-135 modules are commonly powered from 5 V and their analog output
+may exceed the ESP32 ADC input range. Use an appropriate voltage divider
+or level-shifting circuit before GPIO34.

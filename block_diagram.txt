@@ -1,0 +1,25 @@
+SMART ENVIRONMENTAL MONITORING SYSTEM
+BLOCK DIAGRAM
+
+        +----------------+
+        |     DHT22      |
+        | Temp/Humidity  |
+        +-------+--------+
+                |
+                | GPIO
+                v
++-----------+   +---------------------+    I2C    +-------------+
+|  MQ-135   |-->|                     |---------->|    OLED     |
+| Air ADC   |   |        ESP32        |            |  Display   |
++-----------+   | Sensor Acquisition  |            +-------------+
+                | Processing + Wi-Fi   |
++-----------+   |                     |
+|    LDR    |-->|                     |
+| Light ADC |   +----------+----------+
++-----------+              |
+                           | Wi-Fi / HTTP
+                           v
+                    +--------------+
+                    |  ThingSpeak  |
+                    | IoT Dashboard|
+                    +--------------+
